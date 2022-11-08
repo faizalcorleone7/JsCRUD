@@ -1,0 +1,11 @@
+{
+  "domain": "http://localhost",
+  "frontendPort": 3000,
+  "port": 5000,
+  "database": {
+    "hostname": "localhost",
+    "username": "root",
+    "password": "Kankroli@e11",
+    "database": "wiki_db"
+  }
+}
