@@ -2,8 +2,9 @@ const WikiData = require("../models/wikiData");
 const CSVHandler = require('fs')
 const path = require('path');
 const dataFilename = process.argv.slice(2).join("\ ")
+let CSVFile = ""
 try{
-  const CSVFile = path.resolve(__dirname, `./../../${dataFilename}`)
+  CSVFile = path.resolve(__dirname, `./../../DataFile/${dataFilename}`)
 } catch(error) {
   console.error("Give correct filename")
   process.exit()
