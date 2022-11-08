@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'
 
@@ -136,20 +137,24 @@ class AddorUpdateRecordComponent extends Component {
     return (
       <Form>
         <Form.Group className="mb-3" controlId="">
-          <Form.Label>User</Form.Label>
+        <FloatingLabel controlId="User" label="User" className="mb-3">
           <Form.Control onChange={this.changeUserFormValue.bind(this)} value={this.state.User} type="text" placeholder={"User"} />
+          </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="">
-          <Form.Label>Name</Form.Label>
-          <Form.Control onChange={this.changeNameFormValue.bind(this)} value={this.state.Name} type="text" placeholder={"Name"} />
+          <FloatingLabel controlId="Name" label="Name" className="mb-3">
+            <Form.Control onChange={this.changeNameFormValue.bind(this)} value={this.state.Name} type="text" placeholder={"Name"} />
+          </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="">
-          <Form.Label>Date of Creation</Form.Label>
-          <Form.Control onChange={this.changeDateFormValue.bind(this)} value={this.state.date.split(".")[0]} type="datetime-local" placeholder={"Date"} />
+          <FloatingLabel controlId="Date of Creation" label="Date of Creation" className="mb-3">
+            <Form.Control onChange={this.changeDateFormValue.bind(this)} value={this.state.date.split(".")[0]} type="datetime-local" placeholder={"Date"} />
+          </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="">
-          <Form.Label>Changes</Form.Label>
-          <Form.Control onChange={this.changeChangesFormValue.bind(this)} value={this.state.changes} type="number" placeholder={"Changes"} />
+          <FloatingLabel controlId="Changes" label="Changes" className="mb-3">
+            <Form.Control onChange={this.changeChangesFormValue.bind(this)} value={this.state.changes} type="number" placeholder={"Changes"} />
+          </FloatingLabel>
         </Form.Group>
         <Button type="button" onClick={this.performSubmitAction.bind(this)}>Submit</Button>
       </Form>
