@@ -1,8 +1,14 @@
 const WikiData = require("../models/wikiData");
 const CSVHandler = require('fs')
 const path = require('path');
-const { exit } = require("process");
-const CSVFile = path.resolve(__dirname, "./../../DataFile/Dataset-\ Full\ Stack\ task\ -\ smallwikipedia\ (1\).csv")
+const dataFilename = process.argv.slice(2).join("\ ")
+try{
+  const CSVFile = path.resolve(__dirname, `./../../${dataFilename}`)
+} catch(error) {
+  console.error("Give correct filename")
+  process.exit()
+}
+
 
 async function uploadData()
 {
